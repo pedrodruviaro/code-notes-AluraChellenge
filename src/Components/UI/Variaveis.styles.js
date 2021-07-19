@@ -1,0 +1,5 @@
+export const corFundo = "#051D3B" 
+export const corFonte = "#fdfdfd" 
+export const fundoBotao = "#5081FB"  
+export const fundoInput = "rgba(255, 255, 255, 0.16)"  
+export const fundoCodigo = "#141414"  

@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { GlobalStyles } from "./Components/UI/GlobalStyles";
+import { corFundo } from "./Components/UI/Variaveis.styles";
+import Comunidade from "./Pages/Comunidade";
+import EditorDeCodigo from "./Pages/EditorDeCodigo";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import styled from "styled-components";
+import Menu from "./Components/Menu";
+
+const AppWrap = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu principal"
+    "footer footer";
+  grid-template-columns: 10em 1fr;
+  grid-template-rows: 6vh 1fr 4vh;
+
+  background-color: ${corFundo};
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <AppWrap>
+        <Header />
+        <Router>
+          <Menu />
+          <Switch>
+            <Route exact path="/">
+              <Comunidade />
+            </Route>
+            <Route path="/editor">
+              <EditorDeCodigo />
+            </Route>
+          </Switch>
+        </Router>
+        <Footer />
+      </AppWrap>
+    </>
   );
 }
 
