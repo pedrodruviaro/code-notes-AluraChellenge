@@ -16,7 +16,7 @@ const AppWrap = styled.div`
     "header header"
     "menu principal"
     "footer footer";
-  grid-template-columns: 10em 1fr;
+  grid-template-columns: 12em 1fr;
   grid-template-rows: 6vh 1fr 4vh;
 
   background-color: ${corFundo};
